@@ -1,0 +1,88 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Login to HoneywellAdmin</title>
+        <link rel="shortcut icon" href="img/logo/lobiadmin-logo-16.ico" />
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+        
+        <link rel="stylesheet" href="css/login.css"/>
+    </head>
+    <body style="background-image: url('img/demo/3_1920.jpg')">
+        <div class="login-wrapper fadeInDown animated">
+            <form action class="lobi-form login-form visible">
+                <div class="login-header">
+                    Login to your account
+                </div>
+                <div class="login-body no-padding">
+                    <fieldset>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <label class="input">
+                                <span class="input-icon input-icon-prepend fa fa-user"></span>
+                                <input type="text" name="username" placeholder="Username">
+                                <span class="tooltip tooltip-top-left"><i class="fa fa-user text-cyan-dark"></i> Please enter the username</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <label class="input">
+                                <span class="input-icon input-icon-prepend fa fa-key"></span>
+                                <input type="password" name="password" placeholder="Password">
+                                <span class="tooltip tooltip-top-left"><i class="fa fa-key text-cyan-dark"></i> Please enter your password</span>
+                            </label>
+                           
+                        </div>
+
+                        <div class="row">
+                            
+                            <div class="col-xs-4">
+                                <button type="submit" class="btn btn-info btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+               
+            </form>
+            <!--Sign up form-->
+            
+     
+        </div>
+        
+
+        <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $('.login-wrapper').ready(function(){
+                $('.login-form').submit(function(){
+                    window.location.href = window.location.href+"/../";
+                    return false;
+                });
+                $('.signup-form').submit(function(){
+                    return false;
+                });
+                $('.pass-forgot-form').submit(function(){
+                    return false;
+                });
+            });
+            $('.btn-forgot-password').click(function(ev){
+                var $form = $(this).closest('form');
+                $form.removeClass('visible');
+                $form.parent().find('.pass-forgot-form').addClass('visible');
+            });
+            $('.btn-sign-in').click(function(){
+                var $form = $(this).closest('form');
+                $form.removeClass('visible');
+                $form.parent().find('.login-form').addClass('visible');
+            });
+            $('.btn-sign-up').click(function(){
+                var $form = $(this).closest('form');
+                $form.removeClass('visible');
+                $form.parent().find('.signup-form').addClass('visible');
+            });
+        </script>
+    </body>
+</html>
